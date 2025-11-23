@@ -136,7 +136,7 @@ class Screen1 extends StatelessWidget {
           SizedBox(height: 15),
           Container(
             color: Colors.redAccent,
-            child: Image.asset('assets/a1.png'),
+            child: Image.asset('assets/a1.jpg'),
             width: 200,
             height: 200,
           ),
@@ -176,7 +176,7 @@ class Screen2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text('Screen2');
+    return Text('以後去賣雞排(預計2027)');
   }
 }
 class Screen3 extends StatelessWidget {
