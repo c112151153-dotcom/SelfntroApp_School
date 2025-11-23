@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF114514)),
       ),
       home: const MyHomePage(),
     );
@@ -54,14 +54,14 @@ class _MyHomePageState extends State<MyHomePage> {
       body: tabs[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
                              type: BottomNavigationBarType.fixed,
-                             backgroundColor: Colors.blue,
+                             backgroundColor: const Color(0x19114514),
                              selectedItemColor: Colors.white,
                              selectedFontSize: 18,
                              unselectedFontSize: 14,
                              iconSize: 30,
                              currentIndex: currentIndex,
                              items: [
-                               BottomNavigationBarItem(icon: currentIndex==0? Image.asset('assets/a1.png', width: 40, height: 40,):Image.asset('assets/a11.png', width: 30, height: 30,), label:"自我介紹",),
+                               BottomNavigationBarItem(icon: currentIndex==0? Image.asset('assets/a1.jpg', width: 40, height: 40,):Image.asset('assets/a1.jpg', width: 30, height: 30,), label:"自我介紹",),
                                BottomNavigationBarItem(icon: currentIndex==1? Image.asset('assets/a2.png', width: 40, height: 40,):Image.asset('assets/a21.png', width: 30, height: 30,), label:"學習歷程",),
                                BottomNavigationBarItem(icon: currentIndex==2? Image.asset('assets/a3.jpg', width: 40, height: 40,):Image.asset('assets/a31.jpg', width: 30, height: 30,), label:"學習計畫",),
                                BottomNavigationBarItem(icon: currentIndex==3? Image.asset('assets/a4.png', width: 40, height: 40,):Image.asset('assets/a41.png', width: 30, height: 30,), label:"專業方向",),
@@ -116,11 +116,23 @@ class Screen1 extends StatelessWidget {
           //標題
           Padding(
             padding: EdgeInsets.fromLTRB(30, 20, 30, 20),
-            child: Text("Who am I", style: TextStyle(fontSize: 32,
+            child: Text("  國立高雄科技大學 \n 學號：C112151153 \n     20歲 是個學生", style: TextStyle(fontSize: 32,
                                                      fontWeight: FontWeight.bold),
                    ),
           ),
           //自傳部分
+          Container(
+            color: Colors.redAccent,
+            child: Image.asset('assets/a1.jpg'),
+            width: 200,
+            height: 200,
+          ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(30, 20, 30, 20),
+            child: Text("頭髮平常懶著剪，\n大概長的像這樣。", style: TextStyle(fontSize: 20,
+                fontWeight: FontWeight.bold),
+            ),
+          ),
           Container(
             padding: EdgeInsets.all(20),
             margin: EdgeInsets.fromLTRB(30, 0, 30, 30),
@@ -134,13 +146,6 @@ class Screen1 extends StatelessWidget {
             child: Text(s1, style: TextStyle(fontSize: 20,)),
           ),
           SizedBox(height: 15),
-          Container(
-            color: Colors.redAccent,
-            child: Image.asset('assets/a1.jpg'),
-            width: 200,
-            height: 200,
-          ),
-          SizedBox(height: 25),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -176,7 +181,16 @@ class Screen2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text('以後去賣雞排(預計2027)');
+    return Text('加入國立高雄科技大學(2023)\n'
+        '\n未來預期\n'
+        '低空飛過，沒有被當，順利畢業。(2027)\n'
+        '加入國軍(2027)\n'
+        '退出國軍(2028)\n'
+        '被AI取代，找不到工作。(2028)\n'
+        '開始學習其他技能(2029)\n'
+        '還是找不到工作，又沒有錢，被迫回歸原始生活(2035)\n'
+        '建立自己的第一個根據地(2036)\n'
+        '到了夏季，因為全球暖化高溫50°C被活活熱死。(2036)');
   }
 }
 class Screen3 extends StatelessWidget {
@@ -190,7 +204,7 @@ class Screen3 extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("大一時期", style: TextStyle(fontSize: 24,)),
+              Text("最強學習計畫 (殺手級)", style: TextStyle(fontSize: 24,)),
             ],
           ),
           SizedBox(height: 10,),
@@ -198,15 +212,20 @@ class Screen3 extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Container(
-                height: 200,
+                height: 514,
                 width: 140,
                 //width: 200,
                 child: ListView(
                   children: [
-                    Text("1. 學好英文", style: TextStyle(fontSize: 20,)),
-                    Text("2. 組合語言", style: TextStyle(fontSize: 20,)),
-                    Text("3. 考取證照", style: TextStyle(fontSize: 20,)),
-                    Text("4. 人際關係", style: TextStyle(fontSize: 20,)),
+                    Text("1. 不要被當", style: TextStyle(fontSize: 20,)),
+                    Text("2. 不咬被當", style: TextStyle(fontSize: 20,)),
+                    Text("3. 不要被當", style: TextStyle(fontSize: 20,)),
+                    Text("4. 不要被當", style: TextStyle(fontSize: 20,)),
+                    Text("5. 不要被當", style: TextStyle(fontSize: 20,)),
+                    Text("6. 不要被當", style: TextStyle(fontSize: 20,)),
+                    Text("7. 不要被當", style: TextStyle(fontSize: 20,)),
+                    Text("8. 不要被當", style: TextStyle(fontSize: 20,)),
+                    Text("9. 不要被當", style: TextStyle(fontSize: 20,)),
                   ],
                 ),
               ),
@@ -228,6 +247,47 @@ class Screen4 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text('Screen4');
+    return Container(
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text("專業方向？", style: TextStyle(fontSize: 24,)),
+            ],
+          ),
+          SizedBox(height: 10,),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Container(
+                height: 514,
+                width: 400,
+                //width: 200,
+                child: ListView(
+                  children: [
+                    Text("1. 遜咖俱樂部20年老會員", style: TextStyle(fontSize: 20,)),
+                    Text("2. 和AI聊天", style: TextStyle(fontSize: 20,)),
+                    Text("3. 盡量不被當", style: TextStyle(fontSize: 20,)),
+                    Text("4. 成功挑戰孵化柚子", style: TextStyle(fontSize: 20,)),
+                    Text("5. 當網友回 chmod 777 時可以知道笑點在哪", style: TextStyle(fontSize: 20,)),
+                    Text("6. 不會違法", style: TextStyle(fontSize: 20,)),
+                    Text("7. 考試不會作弊", style: TextStyle(fontSize: 20,)),
+                    Text("8. 不會在網路上罵人", style: TextStyle(fontSize: 20,)),
+                    Text("9. 常常忘記自己密碼", style: TextStyle(fontSize: 20,)),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 10,),
+          Row(),
+          SizedBox(height: 10,),
+          Row(),
+          SizedBox(height: 10,),
+          Row(),
+        ],
+      ),
+    );
   }
 }
